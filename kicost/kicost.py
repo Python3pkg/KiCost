@@ -21,10 +21,10 @@
 # THE SOFTWARE.
 
 # Inserted by Pasteurize tool.
-from __future__ import print_function
-from __future__ import unicode_literals
-from __future__ import division
-from __future__ import absolute_import
+
+
+
+
 from builtins import zip
 from builtins import range
 from builtins import int
@@ -72,9 +72,9 @@ try:
     import urllib.request
     from urllib.request import urlopen, Request
 except ImportError:
-    from urlparse import quote as urlquote, urlsplit, urlunsplit
-    from urllib import urlencode
-    from urllib2 import urlopen, Request
+    from urllib.parse import quote as urlquote, urlsplit, urlunsplit
+    from urllib.parse import urlencode
+    from urllib.request import urlopen, Request
 
 # ghost library allows scraping pages that have Javascript challenge pages that
 # screen-out robots. Digi-Key stopped doing this, so it's not needed at the moment.
@@ -498,7 +498,7 @@ def create_local_part_html(parts):
                         if link is not None:
                             url_parts = list(urlsplit(link))
                             if url_parts[0] == '':
-                                url_parts[0] = u'http'
+                                url_parts[0] = 'http'
                             link = urlunsplit(url_parts)
                             with tag('div', klass='link'):
                                 text(link)

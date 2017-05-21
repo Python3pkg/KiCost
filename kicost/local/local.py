@@ -21,10 +21,10 @@
 # THE SOFTWARE.
 
 # Inserted by Pasteurize tool.
-from __future__ import print_function
-from __future__ import unicode_literals
-from __future__ import division
-from __future__ import absolute_import
+
+
+
+
 from builtins import zip
 from builtins import range
 from builtins import int
@@ -44,9 +44,9 @@ try:
     import urllib.request
     from urllib.request import urlopen, Request
 except ImportError:
-    from urlparse import quote as urlquote, urlsplit, urlunsplit
-    from urllib import urlencode
-    from urllib2 import urlopen, Request
+    from urllib.parse import quote as urlquote, urlsplit, urlunsplit
+    from urllib.parse import urlencode
+    from urllib.request import urlopen, Request
 
 from ..kicost import PartHtmlError, FakeBrowser
 from ..kicost import logger, DEBUG_OVERVIEW, DEBUG_DETAILED, DEBUG_OBSESSIVE
